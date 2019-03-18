@@ -4,6 +4,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MindTheMango.Mind.Api", "Mi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MindTheMango.Mind.Api.WebApi", "MindTheMango.Mind.Api.WebApi\MindTheMango.Mind.Api.WebApi.csproj", "{D8B0FF4D-663A-41B7-973C-6431E785B8E6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MindTheMango.Mind.Common", "MindTheMango.Mind.Common", "{8CCB7202-5AAE-418A-99C8-5CF2F302FCC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MindTheMango.Mind.Common.Identity", "MindTheMango.Mind.Common.Identity\MindTheMango.Mind.Common.Identity.csproj", "{3A97E285-2869-4158-B9B0-15B681517DA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,8 +18,13 @@ Global
 		{D8B0FF4D-663A-41B7-973C-6431E785B8E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8B0FF4D-663A-41B7-973C-6431E785B8E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8B0FF4D-663A-41B7-973C-6431E785B8E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A97E285-2869-4158-B9B0-15B681517DA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A97E285-2869-4158-B9B0-15B681517DA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A97E285-2869-4158-B9B0-15B681517DA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A97E285-2869-4158-B9B0-15B681517DA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D8B0FF4D-663A-41B7-973C-6431E785B8E6} = {B890F5A3-C04F-48B8-8CCC-38B00F124C84}
+		{3A97E285-2869-4158-B9B0-15B681517DA2} = {8CCB7202-5AAE-418A-99C8-5CF2F302FCC7}
 	EndGlobalSection
 EndGlobal
