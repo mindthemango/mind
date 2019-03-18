@@ -7,4 +7,9 @@ namespace MindTheMango.Mind.Common.Identity
     {
         
     }
+    
+    public class AccountRole : IdentityRole<Guid>
+    {
+        
+    }
 }
