@@ -5,6 +5,10 @@ namespace MindTheMango.Mind.Domain.Entity
     public class User
     {
         /// <summary>
+        /// Id of the user.
+        /// </summary>
+        public Guid Id { get; set; }
+        /// <summary>
         /// Name of the user.
         /// </summary>
         public string Name { get; set; }
@@ -13,7 +17,7 @@ namespace MindTheMango.Mind.Domain.Entity
         /// </summary>
         public string Surname { get; set; }
         /// <summary>
-        /// Registration date of the user.
+        /// Represents the registration date of the user.
         /// </summary>
         public DateTime RegistrationDate { get; set; }
         /// <summary>

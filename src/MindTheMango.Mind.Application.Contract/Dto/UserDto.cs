@@ -21,7 +21,7 @@ namespace MindTheMango.Mind.Application.Contract.Dto
         /// </summary>
         public string Email { get; set; }
         /// <summary>
-        /// Registration date of the user.
+        /// Represents the registration date of the user.
         /// </summary>
         public DateTime RegistrationDate { get; set; }
         /// <summary>
