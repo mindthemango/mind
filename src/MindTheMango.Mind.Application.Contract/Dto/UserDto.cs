@@ -15,7 +15,11 @@ namespace MindTheMango.Mind.Application.Contract.Dto
         /// <summary>
         /// Surname of the user.
         /// </summary>
-        public string Surname { get; set; }
+        public string Surname { get; set; }       
+        /// <summary>
+        /// Username of the user.
+        /// </summary>
+        public string Username { get; set; }
         /// <summary>
         /// Email of the user.
         /// </summary>
