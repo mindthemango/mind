@@ -2,6 +2,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MindTheMango.Mind.Common.Configuration;
 using MindTheMango.Mind.Common.Identity.Configuration;
+using MindTheMango.Mind.Persistence.Implementation.Configuration;
 
 namespace MindTheMango.Mind.Common.IoC.Configuration
 {
@@ -11,6 +12,7 @@ namespace MindTheMango.Mind.Common.IoC.Configuration
         {
             services.AddPipelines(configuration);
             services.AddIdentityDependencies(configuration);
+            services.AddPersistenceDependencies(configuration);
 
             return services;
         }
