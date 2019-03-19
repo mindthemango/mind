@@ -6,6 +6,6 @@ namespace MindTheMango.Mind.Application.Contract.Service
 {
     public interface IUserService
     {
-        Task<Result<Guid>> CreateUser(string name, string surname, string email, string password);
+        Task<Result<Guid>> Create(string name, string surname, string username, string email, string password);
     }
 }
