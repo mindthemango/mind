@@ -12,6 +12,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MindTheMango.Mind.Common.Io
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MindTheMango.Mind.Common", "MindTheMango.Mind.Common\MindTheMango.Mind.Common.csproj", "{A61419FD-DCF9-42FC-9828-A85426ED25B3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MindTheMango.Mind.Application", "MindTheMango.Mind.Application", "{47D6400C-9A0E-400D-9DAC-FD61DA9F8CB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MindTheMango.Mind.Application.Contract", "MindTheMango.Mind.Application.Contract\MindTheMango.Mind.Application.Contract.csproj", "{D2FDC640-78E1-4F3D-A91A-CB223064DA4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MindTheMango.Mind.Application.Implementation", "MindTheMango.Mind.Application.Implementation\MindTheMango.Mind.Application.Implementation.csproj", "{BC09AD46-7D18-4DDB-9747-964BCE04FC91}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,11 +40,21 @@ Global
 		{A61419FD-DCF9-42FC-9828-A85426ED25B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A61419FD-DCF9-42FC-9828-A85426ED25B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A61419FD-DCF9-42FC-9828-A85426ED25B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2FDC640-78E1-4F3D-A91A-CB223064DA4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2FDC640-78E1-4F3D-A91A-CB223064DA4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2FDC640-78E1-4F3D-A91A-CB223064DA4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2FDC640-78E1-4F3D-A91A-CB223064DA4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC09AD46-7D18-4DDB-9747-964BCE04FC91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC09AD46-7D18-4DDB-9747-964BCE04FC91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC09AD46-7D18-4DDB-9747-964BCE04FC91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC09AD46-7D18-4DDB-9747-964BCE04FC91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D8B0FF4D-663A-41B7-973C-6431E785B8E6} = {B890F5A3-C04F-48B8-8CCC-38B00F124C84}
 		{3A97E285-2869-4158-B9B0-15B681517DA2} = {8CCB7202-5AAE-418A-99C8-5CF2F302FCC7}
 		{9B310F48-5852-4DA9-B306-0C549604C759} = {8CCB7202-5AAE-418A-99C8-5CF2F302FCC7}
 		{A61419FD-DCF9-42FC-9828-A85426ED25B3} = {8CCB7202-5AAE-418A-99C8-5CF2F302FCC7}
+		{D2FDC640-78E1-4F3D-A91A-CB223064DA4A} = {47D6400C-9A0E-400D-9DAC-FD61DA9F8CB8}
+		{BC09AD46-7D18-4DDB-9747-964BCE04FC91} = {47D6400C-9A0E-400D-9DAC-FD61DA9F8CB8}
 	EndGlobalSection
 EndGlobal
