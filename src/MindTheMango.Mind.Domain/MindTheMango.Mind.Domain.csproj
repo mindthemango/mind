@@ -6,6 +6,8 @@
 
     <ItemGroup>
       <ProjectReference Include="..\MindTheMango.Mind.Common\MindTheMango.Mind.Common.csproj" />
+      <ProjectReference Include="..\MindTheMango.Mind.Domain.Entity\MindTheMango.Mind.Domain.Entity.csproj" />
+      <ProjectReference Include="..\MindTheMango.Mind.Persistence.Contract\MindTheMango.Mind.Persistence.Contract.csproj" />
     </ItemGroup>
 
 </Project>
