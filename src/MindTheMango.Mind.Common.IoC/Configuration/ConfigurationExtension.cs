@@ -18,5 +18,34 @@ namespace MindTheMango.Mind.Common.IoC.Configuration
                 .AddEnvironmentVariables()
                 .Build();
         }
+        
+        public static ILogger LoadLogger(IConfiguration configuration, bool useElasticSearch = false)
+        {
+            var loggerConf = new LoggerConfiguration()
+                .Enrich.FromLogContext()
+                .Enrich.WithExceptionDetails()
+                .WriteTo.Console();
+
+            if (useElasticSearch)
+            {
+                var elasticUri = new Uri(configuration.GetConnectionString("ElasticSearch"));
+                
+                loggerConf.WriteTo.Elasticsearch(new ElasticsearchSinkOptions(elasticUri)
+                {
+                    AutoRegisterTemplate = true
+                });
+            }
+
+            if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Development")
+            {
+                loggerConf.MinimumLevel.Information();
+            }
+            else
+            {
+                loggerConf.MinimumLevel.Warning();
+            }
+
+            return loggerConf.CreateLogger();
+        }
     }
 }
