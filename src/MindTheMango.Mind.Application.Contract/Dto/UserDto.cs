@@ -1,9 +1,13 @@
 using System;
 
-namespace MindTheMango.Mind.Domain.Entity
+namespace MindTheMango.Mind.Application.Contract.Dto
 {
-    public class User
+    public class UserDto
     {
+        /// <summary>
+        /// Id of the User
+        /// </summary>
+        public Guid Id { get; set; }
         /// <summary>
         /// Name of the user.
         /// </summary>
@@ -12,6 +16,10 @@ namespace MindTheMango.Mind.Domain.Entity
         /// Surname of the user.
         /// </summary>
         public string Surname { get; set; }
+        /// <summary>
+        /// Email of the user.
+        /// </summary>
+        public string Email { get; set; }
         /// <summary>
         /// Registration date of the user.
         /// </summary>
