@@ -4,7 +4,7 @@ namespace MindTheMango.Mind.Common.Result
 {
     public class Result : IResult
     {
-        public IDictionary<string, string[]> Errors { get; }
+        public IDictionary<string, string[]> Errors { get; protected set; }
         public bool Succeeded { get; protected set; }
 
         public Result()
@@ -44,6 +44,39 @@ namespace MindTheMango.Mind.Common.Result
             };
 
             return result; 
+        }
+    }
+    
+    public class Result<T> : Result, IResult<T>
+    {
+        public T Value { get; protected set; }
+
+        public new static Result<T> Fail(string errorKey, List<string> errorDescription)
+        {
+            return (Result<T>) Result.Fail(errorKey, errorDescription);
+        }
+
+        public static Result<T> Success(T value)
+        {
+            var result = new Result<T>()
+            {
+                Succeeded = true,
+                Value = value
+            };
+
+            return result;
+        }
+
+        public static Result<T> FromResult(IResult result)
+        {
+            var newResult = new Result<T>()
+            {
+                Errors = result.Errors,
+                Succeeded = result.Succeeded,
+                Value = default(T)
+            };
+
+            return newResult;
         }
     }
 }
