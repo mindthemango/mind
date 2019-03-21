@@ -8,6 +8,6 @@ namespace MindTheMango.Mind.Persistence.Contract
     {
         IUserRepository UserRepository { get; set; }
 
-        Task SaveAsync(CancellationToken cancellationToken);
+        Task SaveAsync(CancellationToken cancellationToken = default);
     }
 }
