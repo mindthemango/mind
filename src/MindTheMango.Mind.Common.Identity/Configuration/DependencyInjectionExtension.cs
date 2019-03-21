@@ -53,7 +53,7 @@ namespace MindTheMango.Mind.Common.Identity.Configuration
         
         private static IServiceCollection AddMediatRHandlers(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddMediatR(typeof(CreateAccountCommand).GetTypeInfo().Assembly);
+            services.AddMediatR(typeof(CreateAccountCommandHandler).GetTypeInfo().Assembly);
 
             return services;
         }
