@@ -31,7 +31,7 @@ namespace MindTheMango.Mind.Domain.Business.UserLogic.CreateUser
             
             await _unitOfWork.UserRepository.Insert(user);
 
-            await _unitOfWork.SaveAsync();
+            await _unitOfWork.SaveAsync(cancellationToken);
             
             Logger.LogTrace($"Created new user {user.Id} ({user.Name})");
             
