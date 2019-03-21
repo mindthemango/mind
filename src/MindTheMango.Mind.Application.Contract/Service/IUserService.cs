@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 using System.Threading.Tasks;
 using MindTheMango.Mind.Application.Contract.Dto;
 using MindTheMango.Mind.Common.Result;
@@ -9,6 +10,6 @@ namespace MindTheMango.Mind.Application.Contract.Service
     {
         Task<Result<UserDto>> Find(Guid id);
 
-        Task<Result<Guid>> Create(string name, string surname, string username, string email, string password);
+        Task<Result<Guid>> Create(string name, string surname, string username, string email, string password, CancellationToken cancellationToken = default);
     }
 }

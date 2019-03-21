@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 using System.Threading.Tasks;
 using MindTheMango.Mind.Application.Contract.Dto;
 using MindTheMango.Mind.Application.Contract.Service;
@@ -13,7 +14,8 @@ namespace MindTheMango.Mind.Application.Implementation.Service
             throw new NotImplementedException();
         }
 
-        public Task<Result<Guid>> Create(string name, string surname, string username, string email, string password)
+        public Task<Result<Guid>> Create(string name, string surname, string username, string email, string password,
+            CancellationToken cancellationToken = default)
         {
             throw new NotImplementedException();
         }
