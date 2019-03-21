@@ -5,9 +5,13 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="6.0.1" />
+    </ItemGroup>
+    
+    <ItemGroup>
       <ProjectReference Include="..\MindTheMango.Mind.Common\MindTheMango.Mind.Common.csproj" />
       <ProjectReference Include="..\MindTheMango.Mind.Domain.Entity\MindTheMango.Mind.Domain.Entity.csproj" />
       <ProjectReference Include="..\MindTheMango.Mind.Persistence.Contract\MindTheMango.Mind.Persistence.Contract.csproj" />
     </ItemGroup>
-
+    
 </Project>
