@@ -26,9 +26,9 @@ namespace MindTheMango.Mind.Domain.Configuration
 
         private static IServiceCollection AddCustomValidation(this IServiceCollection services, IConfiguration configuration)
         {
-//            AssemblyScanner.FindValidatorsInAssemblyContaining<CreateAccountCommandValidator>().ForEach(result => {
-//                services.AddTransient(result.InterfaceType, result.ValidatorType);
-//            });
+            AssemblyScanner.FindValidatorsInAssemblyContaining<CreateUserCommandValidator>().ForEach(result => {
+                services.AddTransient(result.InterfaceType, result.ValidatorType);
+            });
 
             return services;
         }
