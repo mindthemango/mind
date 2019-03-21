@@ -16,4 +16,8 @@
       <ProjectReference Include="..\MindTheMango.Mind.Common.IoC\MindTheMango.Mind.Common.IoC.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Controllers" />
+    </ItemGroup>
+
 </Project>
