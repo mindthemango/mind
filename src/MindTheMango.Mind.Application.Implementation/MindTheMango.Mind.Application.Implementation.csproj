@@ -7,6 +7,12 @@
 
     <ItemGroup>
       <ProjectReference Include="..\MindTheMango.Mind.Application.Contract\MindTheMango.Mind.Application.Contract.csproj" />
+      <ProjectReference Include="..\MindTheMango.Mind.Common.Identity\MindTheMango.Mind.Common.Identity.csproj" />
+      <ProjectReference Include="..\MindTheMango.Mind.Domain\MindTheMango.Mind.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MediatR" Version="6.0.0" />
     </ItemGroup>
 
 </Project>
