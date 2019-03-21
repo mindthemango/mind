@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
@@ -10,7 +11,7 @@ namespace MindTheMango.Mind.Api.WebApi.Configuration
     {
         public static IServiceCollection AddCustomOpenApi(this IServiceCollection services, IConfiguration configuration)
         {
-            if (true) //TODO: check environment
+            if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Development")
             {
                 services.AddSwaggerGen(c =>
                 {
