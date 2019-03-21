@@ -29,6 +29,16 @@ namespace MindTheMango.Mind.Application.Implementation.Service
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Method to create a new user.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="surname"></param>
+        /// <param name="username"></param>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         public async Task<Result<Guid>> Create(string name, string surname, string username, string email, string password,
             CancellationToken cancellationToken = default)
         {
@@ -39,7 +49,7 @@ namespace MindTheMango.Mind.Application.Implementation.Service
                     Email = email,
                     Username = username,
                     Password = password
-                });
+                }, cancellationToken);
                 
                 if (!accountResult.Succeeded)
                 {
@@ -51,11 +61,11 @@ namespace MindTheMango.Mind.Application.Implementation.Service
                     Id = accountResult.Value,
                     Name = name,
                     Surname = surname
-                });
+                }, cancellationToken);
 
                 if (!userResult.Succeeded)
                 {
-                    await MediatR.Send(new DeleteAccountCommand {Id = accountResult.Value});
+                    await MediatR.Send(new DeleteAccountCommand {Id = accountResult.Value}, cancellationToken);
                 }
                 
                 return userResult;
@@ -64,7 +74,7 @@ namespace MindTheMango.Mind.Application.Implementation.Service
             {
                 Logger.LogError("Unhandled error creating user", e);
                 
-                return Result<Guid>.Fail("unknown_error", new List<string> {"Unkwown error while creating a new user."});
+                return Result<Guid>.Fail("unknown_error", new List<string> {"Unknown error while creating a new user."});
             }
         }
     }
