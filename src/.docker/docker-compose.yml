@@ -1,0 +1,45 @@
+version: '3.1'
+
+services:
+  mindthemango_mind:
+    image: mindthemango/mind:latest
+    container_name: mindthemango_mind
+    ports:
+      - "5000:80"
+    depends_on:
+      - postgre_mindthemango
+
+  postgre_mindthemango:
+    image: postgres:11.1-alpine
+    container_name: postgre_mindthemango
+    restart: always
+    environment:
+      POSTGRES_USER: "mindthemango"
+      POSTGRES_PASSWORD: "hunter2mind"
+    ports:
+      - "5432:5432"
+    volumes:
+      - mindthemango_data:/var/lib/postgresql/data
+
+  postgre_mindthemango_account:
+    image: postgres:11.1-alpine
+    container_name: postgre_mindthemango_account
+    restart: always
+    environment:
+      POSTGRES_USER: "mindthemangoaccount"
+      POSTGRES_PASSWORD: "hunter2mind"
+    ports:
+      - "5433:5432"
+    volumes:
+      - mindthemango_data_account:/var/lib/postgresql/data
+
+  adminer:
+    image: adminer
+    container_name: adminer
+    restart: always
+    ports:
+      - "5701:8080"
+
+volumes:
+  mindthemango_data:
+  mindthemango_data_account:
