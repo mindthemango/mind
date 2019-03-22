@@ -36,7 +36,7 @@ namespace MindTheMango.Mind.Common.Identity.Logic.CreateAccount
                 
                 if (error != null)
                 {
-                    return Result<Guid>.Fail(error.Code, new List<string> {error.Description});
+                    return Result<Guid>.Fail("identity_error", new List<string> {$"{error.Code}: {error.Description}"});
                 }
             }
             
