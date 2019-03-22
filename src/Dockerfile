@@ -12,8 +12,11 @@ COPY *.sln ./
 COPY MindTheMango.Mind.Api.WebApi/*.csproj MindTheMango.Mind.Api.WebApi/
 COPY MindTheMango.Mind.Application.Contract/*.csproj MindTheMango.Mind.Application.Contract/
 COPY MindTheMango.Mind.Application.Implementation/*.csproj MindTheMango.Mind.Application.Implementation/
-COPY MindTheMango.Mind.Domain.Entity/*.csproj MindTheMango.Mind.Domain.Entity/
+COPY MindTheMango.Mind.Common/*.csproj MindTheMango.Mind.Common/
+COPY MindTheMango.Mind.Common.Identity/*.csproj MindTheMango.Mind.Common.Identity/
+COPY MindTheMango.Mind.Common.IoC/*.csproj MindTheMango.Mind.Common.IoC/
 COPY MindTheMango.Mind.Domain/*.csproj MindTheMango.Mind.Domain/
+COPY MindTheMango.Mind.Domain.Entity/*.csproj MindTheMango.Mind.Domain.Entity/
 COPY MindTheMango.Mind.Persistence.Contract/*.csproj MindTheMango.Mind.Persistence.Contract/
 COPY MindTheMango.Mind.Persistence.Implementation/*.csproj MindTheMango.Mind.Persistence.Implementation/
 
