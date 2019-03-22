@@ -7,7 +7,7 @@ using Serilog;
 
 namespace MindTheMango.Mind.Api.WebApi
 {
-    public class Program
+    internal class Program
     {
         private static IConfiguration Configuration { get; } = ConfigurationExtension.LoadConfiguration();
         private static IWebHostBuilder CreateWebHostBuilder(string[] args) =>

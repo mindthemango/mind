@@ -8,7 +8,7 @@ using MindTheMango.Mind.Common.IoC.Configuration;
 
 namespace MindTheMango.Mind.Api.WebApi
 {
-    public class Startup
+    internal class Startup
     {
         public Startup(IConfiguration configuration)
         {
