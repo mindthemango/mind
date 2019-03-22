@@ -35,6 +35,11 @@ ProjectSection(SolutionItems) = preProject
 	Dockerfile = Dockerfile
 EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".docker", ".docker", "{50AF9B3F-96B1-4550-85E8-800F393B3152}"
+ProjectSection(SolutionItems) = preProject
+	.docker\docker-compose.yml = .docker\docker-compose.yml
+EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,5 +98,6 @@ Global
 		{3135C645-475B-46B8-8E5F-1B4B299501C9} = {8E121933-8CDC-4411-943F-324F241770A2}
 		{6530EF8F-0CC0-4D40-8C6F-223647BFE577} = {BAB3EF98-66E2-4541-8E9F-03978D8CB8F2}
 		{7DC601D4-0BED-4234-8018-DA33A71856A0} = {BAB3EF98-66E2-4541-8E9F-03978D8CB8F2}
+		{50AF9B3F-96B1-4550-85E8-800F393B3152} = {749BED38-36A4-417B-B134-2D989E08BA01}
 	EndGlobalSection
 EndGlobal
