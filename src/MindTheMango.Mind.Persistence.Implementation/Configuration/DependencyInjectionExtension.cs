@@ -7,7 +7,7 @@ using Scrutor;
 
 namespace MindTheMango.Mind.Persistence.Implementation.Configuration
 {
-    public static class DependencyInjectionConfiguration
+    public static class DependencyInjectionExtension
     {
         public static IServiceCollection AddPersistenceDependencies(this IServiceCollection services, IConfiguration configuration)
         {
