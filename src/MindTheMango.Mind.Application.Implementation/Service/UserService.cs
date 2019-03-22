@@ -65,16 +65,21 @@ namespace MindTheMango.Mind.Application.Implementation.Service
 
                 if (!userResult.Succeeded)
                 {
-                    await MediatR.Send(new DeleteAccountCommand {Id = accountResult.Value}, cancellationToken);
+                    await MediatR.Send(new DeleteAccountCommand
+                    {
+                        Id = accountResult.Value
+                    }, cancellationToken);
                 }
                 
                 return userResult;
             }
             catch (Exception e)
             {
-                Logger.LogError("Unhandled error creating user", e);
+                var code = Guid.NewGuid().ToString();
                 
-                return Result<Guid>.Fail("unknown_error", new List<string> {"Unknown error while creating a new user."});
+                Logger.LogError($"Unhandled error creating user (error trace code: {code})", e);
+                
+                return Result<Guid>.Fail("unknown_error", new List<string> {$"Unknown error while creating a new user. Trace code: {code}"});
             }
         }
     }
