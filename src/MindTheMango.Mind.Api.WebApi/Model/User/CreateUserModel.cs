@@ -1,5 +1,8 @@
 namespace MindTheMango.Mind.Api.WebApi.Model.User
 {
+    /// <summary>
+    /// Model for creating a new user.
+    /// </summary>
     public class CreateUserModel
     {
         /// <summary>
@@ -11,7 +14,7 @@ namespace MindTheMango.Mind.Api.WebApi.Model.User
         /// </summary>
         public string Surname { get; set; }
         /// <summary>
-        /// Use<rname of the user.
+        /// Username of the user.
         /// </summary>
         public string Username { get; set; }
         /// <summary>
