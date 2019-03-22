@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MindTheMango.Mind.Application.Implementation.Configuration;
 using MindTheMango.Mind.Common.Configuration;
 using MindTheMango.Mind.Common.Identity.Configuration;
 using MindTheMango.Mind.Common.Identity.Context;
@@ -19,6 +20,7 @@ namespace MindTheMango.Mind.Common.IoC.Configuration
             services.AddIdentityDependencies(configuration);
             services.AddDomainDependencies(configuration);
             services.AddPersistenceDependencies(configuration);
+            services.AddApplicationDependencies(configuration);
 
             return services;
         }

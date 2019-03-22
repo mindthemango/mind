@@ -19,6 +19,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\MindTheMango.Mind.Application.Implementation\MindTheMango.Mind.Application.Implementation.csproj" />
       <ProjectReference Include="..\MindTheMango.Mind.Common.Identity\MindTheMango.Mind.Common.Identity.csproj" />
       <ProjectReference Include="..\MindTheMango.Mind.Domain\MindTheMango.Mind.Domain.csproj" />
       <ProjectReference Include="..\MindTheMango.Mind.Persistence.Implementation\MindTheMango.Mind.Persistence.Implementation.csproj" />
