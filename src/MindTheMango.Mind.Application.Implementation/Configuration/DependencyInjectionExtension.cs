@@ -9,6 +9,7 @@ namespace MindTheMango.Mind.Application.Implementation.Configuration
     {
         public static IServiceCollection AddApplicationDependencies(this IServiceCollection services, IConfiguration configuration)
         {
+            services.AddServices(configuration);
 
             return services;
         }
