@@ -17,7 +17,7 @@ namespace MindTheMango.Mind.Api.WebApi.Configuration
                 {
                     c.SwaggerDoc("v1", new OpenApiInfo { Title = configuration["OpenApi:Title"], Version = "v1" });
                 
-                    var mindWebApi = Path.Combine(System.AppContext.BaseDirectory, "MindTheMango.Mind.WebApi.xml");
+                    var mindWebApi = Path.Combine(System.AppContext.BaseDirectory, "MindTheMango.Mind.Api.WebApi.xml");
 
                     c.IncludeXmlComments(mindWebApi, true);
                 });
