@@ -3,7 +3,7 @@ using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using MindTheMango.Mind.Domain.Business.UserLogic.CreateUser;
+using MindTheMango.Mind.Domain.Business.Users.CreateUser;
 
 namespace MindTheMango.Mind.Domain.Configuration
 {

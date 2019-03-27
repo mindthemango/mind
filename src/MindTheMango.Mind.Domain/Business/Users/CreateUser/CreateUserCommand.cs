@@ -2,7 +2,7 @@ using System;
 using MindTheMango.Mind.Common.Request;
 using MindTheMango.Mind.Common.Result;
 
-namespace MindTheMango.Mind.Domain.Business.UserLogic.CreateUser
+namespace MindTheMango.Mind.Domain.Business.Users.CreateUser
 {
     public class CreateUserCommand : Request<Result<Guid>>
     {

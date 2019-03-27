@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace MindTheMango.Mind.Domain.Business.UserLogic.CreateUser
+namespace MindTheMango.Mind.Domain.Business.Users.CreateUser
 {
     public class CreateUserCommandValidator : AbstractValidator<CreateUserCommand>
     {

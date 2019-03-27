@@ -7,7 +7,7 @@ using MindTheMango.Mind.Common.Result;
 using MindTheMango.Mind.Domain.Entity;
 using MindTheMango.Mind.Persistence.Contract;
 
-namespace MindTheMango.Mind.Domain.Business.UserLogic.CreateUser
+namespace MindTheMango.Mind.Domain.Business.Users.CreateUser
 {
     public class CreateUserCommandHandler : RequestHandler<CreateUserCommand, Result<Guid>>
     {

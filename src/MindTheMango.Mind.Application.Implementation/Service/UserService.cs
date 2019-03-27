@@ -9,7 +9,7 @@ using MindTheMango.Mind.Application.Contract.Service;
 using MindTheMango.Mind.Common.Identity.Logic.CreateAccount;
 using MindTheMango.Mind.Common.Identity.Logic.DeleteAccount;
 using MindTheMango.Mind.Common.Result;
-using MindTheMango.Mind.Domain.Business.UserLogic.CreateUser;
+using MindTheMango.Mind.Domain.Business.Users.CreateUser;
 
 namespace MindTheMango.Mind.Application.Implementation.Service
 {
