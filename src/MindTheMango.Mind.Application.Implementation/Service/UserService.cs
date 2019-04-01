@@ -79,7 +79,7 @@ namespace MindTheMango.Mind.Application.Implementation.Service
                 
                 Logger.LogError($"Unhandled error creating user (error trace code: {code})", e);
                 
-                return Result<Guid>.Fail("unknown_error", new List<string> {$"Unknown error while creating a new user. Trace code: {code}"});
+                return Result<Guid>.UnknownError(new List<string> {$"Unknown error while creating a new user. Trace code: {code}"});
             }
         }
     }
