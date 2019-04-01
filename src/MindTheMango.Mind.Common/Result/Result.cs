@@ -66,6 +66,21 @@ namespace MindTheMango.Mind.Common.Result
 
             return result;
         }
+        
+        public static Result<T> NotFound(List<string> errorDescription)
+        {
+            return (Result<T>) Result.Fail("not_found", errorDescription);
+        }
+        
+        public static Result<T> UnknownError(List<string> errorDescription)
+        {
+            return (Result<T>) Result.Fail("unknown_error", errorDescription);
+        }
+        
+        public static Result<T> ValidationFailure(List<string> errorDescription)
+        {
+            return (Result<T>) Result.Fail("validation_failures", errorDescription);
+        }
 
         public static Result<T> FromResult(IResult result)
         {
