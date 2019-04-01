@@ -24,7 +24,7 @@ namespace MindTheMango.Mind.Common.Identity.Logic.DeleteAccount
             
             if (account == null)
             {
-                return Result<Guid>.Fail("not found", new List<string> {"the requested account does not exists."});
+                return Result<Guid>.Fail("not_found", new List<string> {"the requested account does not exists."});
             }
 
             await _userManager.DeleteAsync(account);
