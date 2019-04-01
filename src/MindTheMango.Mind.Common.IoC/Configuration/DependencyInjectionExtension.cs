@@ -18,9 +18,9 @@ namespace MindTheMango.Mind.Common.IoC.Configuration
         {
             services.AddPipelines(configuration);
             services.AddIdentityDependencies(configuration);
+            services.AddApplicationDependencies(configuration);
             services.AddDomainDependencies(configuration);
             services.AddPersistenceDependencies(configuration);
-            services.AddApplicationDependencies(configuration);
 
             return services;
         }

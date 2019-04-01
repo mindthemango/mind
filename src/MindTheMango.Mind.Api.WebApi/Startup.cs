@@ -24,7 +24,10 @@ namespace MindTheMango.Mind.Api.WebApi
             
             services.AddDependencyInjection(Configuration);
             
+            services.AddCustomAuthentication(Configuration);
+
             services.AddCustomOpenApi(Configuration);
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,6 +45,8 @@ namespace MindTheMango.Mind.Api.WebApi
             }
 
             app.InitializeDatabases(Configuration);
+            
+            app.UseAuthentication();
             
             app.UseHttpsRedirection();
             app.UseMvc();
