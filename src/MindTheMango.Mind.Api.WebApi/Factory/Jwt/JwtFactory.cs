@@ -8,9 +8,9 @@ using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using MindTheMango.Mind.Common.Result;
 
-namespace MindTheMango.Mind.Api.WebApi.Factory
+namespace MindTheMango.Mind.Api.WebApi.Factory.Jwt
 {
-    internal class JwtFactory
+    internal class JwtFactory : IJwtFactory
     {
         protected readonly ILogger<JwtFactory> Logger;
         private readonly IConfiguration _configuration;
