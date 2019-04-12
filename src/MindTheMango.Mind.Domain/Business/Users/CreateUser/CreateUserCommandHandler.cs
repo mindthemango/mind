@@ -33,7 +33,7 @@ namespace MindTheMango.Mind.Domain.Business.Users.CreateUser
 
             await _unitOfWork.SaveAsync(cancellationToken);
             
-            Logger.LogTrace($"Created new user {user.Id} ({user.Name})");
+            Logger.LogTrace("Created new user {@User}", user);
             
             return Result<Guid>.Success(user.Id);
         }

@@ -33,15 +33,15 @@ namespace MindTheMango.Mind.Persistence.Implementation
                 
                 Logger.LogInformation("Database save operation finished correctly.");
             }
-            catch (DbUpdateConcurrencyException exception)
+            catch (DbUpdateConcurrencyException e)
             {
-                Logger.LogError(exception, "Database save operation failed, concurrency related.");
+                Logger.LogError(e, "Database save operation failed, concurrency related.");
 
                 throw;
             }
-            catch (DbUpdateException exception)
+            catch (DbUpdateException e)
             {
-                Logger.LogError(exception, "Database save operation failed.");
+                Logger.LogError(e, "Database save operation failed.");
 
                 throw;
             }

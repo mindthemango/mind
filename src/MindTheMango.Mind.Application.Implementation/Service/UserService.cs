@@ -39,8 +39,7 @@ namespace MindTheMango.Mind.Application.Implementation.Service
         /// <param name="password"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public async Task<Result<Guid>> Create(string name, string surname, string username, string email, string password,
-            CancellationToken cancellationToken = default)
+        public async Task<Result<Guid>> Create(string name, string surname, string username, string email, string password, CancellationToken cancellationToken = default)
         {
             try
             {
@@ -76,8 +75,8 @@ namespace MindTheMango.Mind.Application.Implementation.Service
             catch (Exception e)
             {
                 var code = Guid.NewGuid().ToString();
-                
-                Logger.LogError($"Unhandled error creating user (error trace code: {code})", e);
+                 
+                Logger.LogError(e, "Unhandled error creating user ({code})", code);
                 
                 return Result<Guid>.UnknownError(new List<string> {$"Unknown error while creating a new user. Trace code: {code}"});
             }

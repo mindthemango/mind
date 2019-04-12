@@ -29,7 +29,7 @@ namespace MindTheMango.Mind.Common.Identity.Logic.DeleteAccount
 
             await _userManager.DeleteAsync(account);
             
-            Logger.LogTrace($"Deleted account {request.Id}");
+            Logger.LogTrace("Deleted account {Id} {@Account}", request.Id, account);
             
             return Result<Guid>.Success(request.Id);
         }
