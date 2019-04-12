@@ -16,7 +16,6 @@ namespace MindTheMango.Mind.Common.Identity.Configuration
         {
             services.AddDatabaseContext(configuration);
             services.AddIdentityCore(configuration);
-            services.AddMediatRHandlers(configuration);
             services.AddCustomValidation(configuration);
             
             return services;
@@ -47,13 +46,6 @@ namespace MindTheMango.Mind.Common.Identity.Configuration
             identityBuilder = new IdentityBuilder(identityBuilder.UserType, typeof(AccountRole), identityBuilder.Services);
 
             identityBuilder.AddEntityFrameworkStores<MindTheMangoAccountDbContext>().AddDefaultTokenProviders();
-
-            return services;
-        }
-        
-        private static IServiceCollection AddMediatRHandlers(this IServiceCollection services, IConfiguration configuration)
-        {
-            services.AddMediatR(typeof(CreateAccountCommandHandler).GetTypeInfo().Assembly);
 
             return services;
         }

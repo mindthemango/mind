@@ -11,19 +11,10 @@ namespace MindTheMango.Mind.Domain.Configuration
     {
         public static IServiceCollection AddDomainDependencies(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddMediatRHandlers(configuration);
             services.AddCustomValidation(configuration);
             
             return services;
         }
-        
-        private static IServiceCollection AddMediatRHandlers(this IServiceCollection services, IConfiguration configuration)
-        {
-            services.AddMediatR(typeof(CreateUserCommandHandler).GetTypeInfo().Assembly);
-
-            return services;
-        }
-
         private static IServiceCollection AddCustomValidation(this IServiceCollection services, IConfiguration configuration)
         {
             AssemblyScanner.FindValidatorsInAssemblyContaining<CreateUserCommandValidator>().ForEach(result => {

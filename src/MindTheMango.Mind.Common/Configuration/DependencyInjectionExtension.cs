@@ -9,7 +9,7 @@ namespace MindTheMango.Mind.Common.Configuration
     {
         public static IServiceCollection AddPipelines(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
+            services.AddMediatR();
 
             return services;
         }

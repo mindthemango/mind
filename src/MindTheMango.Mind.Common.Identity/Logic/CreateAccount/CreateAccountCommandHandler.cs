@@ -40,9 +40,8 @@ namespace MindTheMango.Mind.Common.Identity.Logic.CreateAccount
                 }
             }
             
-            Logger.LogTrace($"Created new account {account.Id} ({account.Email})");
+            Logger.LogTrace("Created account {Id} {@Account}", account.Id, account);
 
-            
             return Result<Guid>.Success(account.Id);
 
         }
