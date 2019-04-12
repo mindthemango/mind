@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using MindTheMango.Mind.Api.WebApi.Factory.Jwt;
 
 namespace MindTheMango.Mind.Api.WebApi.Configuration
 {
@@ -10,7 +11,8 @@ namespace MindTheMango.Mind.Api.WebApi.Configuration
     {
         public static IServiceCollection AddCustomAuthentication(this IServiceCollection services, IConfiguration configuration)
         {
-
+            services.AddScoped<IJwtFactory, JwtFactory>();
+            
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Security:Jwt:SecretKey"]));
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
