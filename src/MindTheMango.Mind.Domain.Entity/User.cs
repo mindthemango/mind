@@ -24,5 +24,6 @@ namespace MindTheMango.Mind.Domain.Entity
         /// Represents the last time a change was made to this user.
         /// </summary>
         public DateTime Timestamp { get; set; }
+        
     }
 }
