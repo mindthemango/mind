@@ -3,6 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using MindTheMango.Mind.Domain.Entity;
 using MindTheMango.Mind.Persistence.Contract;
 using MindTheMango.Mind.Persistence.Contract.Repository;
 using MindTheMango.Mind.Persistence.Implementation.Context;
@@ -16,13 +17,15 @@ namespace MindTheMango.Mind.Persistence.Implementation
         private bool _disposed;
 
         public IUserRepository UserRepository { get; set; }
+        public INoteRepository NoteRepository { get; set; }
 
         public UnitOfWork(MindTheMangoDbContext context, ILogger<UnitOfWork> logger, 
-            IUserRepository userRepository)
+            IUserRepository userRepository, INoteRepository noteRepository)
         {
             Context = context;
             Logger = logger;
             UserRepository = userRepository;
+            NoteRepository = noteRepository;
         }
 
         public async Task SaveAsync(CancellationToken cancellationToken = default)

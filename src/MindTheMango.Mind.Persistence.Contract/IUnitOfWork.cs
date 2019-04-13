@@ -7,6 +7,7 @@ namespace MindTheMango.Mind.Persistence.Contract
     public interface IUnitOfWork
     {
         IUserRepository UserRepository { get; set; }
+        INoteRepository NoteRepository { get; set; }
 
         Task SaveAsync(CancellationToken cancellationToken = default);
     }
