@@ -1,7 +1,7 @@
 using System.Linq;
 using FluentValidation;
 
-namespace MindTheMango.Mind.Common.Identity.Logic.CreateAccount
+namespace MindTheMango.Mind.Common.Identity.Business.CreateAccount
 {
     public class CreateAccountCommandValidator : AbstractValidator<CreateAccountCommand>
     {

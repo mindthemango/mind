@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace MindTheMango.Mind.Common.Identity.Logic.DeleteAccount
+namespace MindTheMango.Mind.Common.Identity.Business.DeleteAccount
 {
     public class DeleteAccountCommandValidator : AbstractValidator<DeleteAccountCommand>
     {

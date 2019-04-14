@@ -5,8 +5,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MindTheMango.Mind.Common.Identity.Business.CreateAccount;
 using MindTheMango.Mind.Common.Identity.Context;
-using MindTheMango.Mind.Common.Identity.Logic.CreateAccount;
 
 namespace MindTheMango.Mind.Common.Identity.Configuration
 {

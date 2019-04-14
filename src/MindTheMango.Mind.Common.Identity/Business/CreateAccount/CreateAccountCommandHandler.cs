@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging;
 using MindTheMango.Mind.Common.Request;
 using MindTheMango.Mind.Common.Result;
 
-namespace MindTheMango.Mind.Common.Identity.Logic.CreateAccount
+namespace MindTheMango.Mind.Common.Identity.Business.CreateAccount
 {
     public class CreateAccountCommandHandler : RequestHandler<CreateAccountCommand, Result<Guid>>
     {

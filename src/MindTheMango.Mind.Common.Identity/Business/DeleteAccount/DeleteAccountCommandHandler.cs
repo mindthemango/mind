@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 using MindTheMango.Mind.Common.Request;
 using MindTheMango.Mind.Common.Result;
 
-namespace MindTheMango.Mind.Common.Identity.Logic.DeleteAccount
+namespace MindTheMango.Mind.Common.Identity.Business.DeleteAccount
 {
     public class DeleteAccountCommandHandler : RequestHandler<DeleteAccountCommand, Result<Guid>>
     {
