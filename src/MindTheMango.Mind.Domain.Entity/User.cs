@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace MindTheMango.Mind.Domain.Entity
 {
@@ -24,6 +25,9 @@ namespace MindTheMango.Mind.Domain.Entity
         /// Represents the last time a change was made to this user.
         /// </summary>
         public DateTime Timestamp { get; set; }
-        
+        /// <summary>
+        /// Represents all the notes the user owns.
+        /// </summary>
+        public ICollection<Note> Notes { get; set; }
     }
 }

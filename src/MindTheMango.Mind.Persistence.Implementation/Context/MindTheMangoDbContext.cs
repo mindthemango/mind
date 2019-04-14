@@ -7,6 +7,7 @@ namespace MindTheMango.Mind.Persistence.Implementation.Context
     public class MindTheMangoDbContext : DbContext
     {
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Note> Notes { get; set; }
 
         public MindTheMangoDbContext()
         {
@@ -14,14 +15,6 @@ namespace MindTheMango.Mind.Persistence.Implementation.Context
 
         public MindTheMangoDbContext(DbContextOptions<MindTheMangoDbContext> options) : base(options)
         {
-        }
-        
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseNpgsql(Environment.GetEnvironmentVariable("MINDTHEMANGO_DATABASE") ?? throw new NullReferenceException());
-            }
         }
     }
 }
