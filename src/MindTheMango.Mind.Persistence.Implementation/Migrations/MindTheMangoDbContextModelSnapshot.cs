@@ -19,6 +19,28 @@ namespace MindTheMango.Mind.Persistence.Implementation.Migrations
                 .HasAnnotation("ProductVersion", "2.2.3-servicing-35854")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
+            modelBuilder.Entity("MindTheMango.Mind.Domain.Entity.Note", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Content");
+
+                    b.Property<DateTime>("CreationDate");
+
+                    b.Property<DateTime>("Timestamp");
+
+                    b.Property<string>("Title");
+
+                    b.Property<Guid?>("UserId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Notes");
+                });
+
             modelBuilder.Entity("MindTheMango.Mind.Domain.Entity.User", b =>
                 {
                     b.Property<Guid>("Id")
@@ -35,6 +57,13 @@ namespace MindTheMango.Mind.Persistence.Implementation.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("MindTheMango.Mind.Domain.Entity.Note", b =>
+                {
+                    b.HasOne("MindTheMango.Mind.Domain.Entity.User")
+                        .WithMany("Notes")
+                        .HasForeignKey("UserId");
                 });
 #pragma warning restore 612, 618
         }
