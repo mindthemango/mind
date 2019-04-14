@@ -1,10 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MindTheMango.Mind.Api", "MindTheMango.Mind.Api", "{B890F5A3-C04F-48B8-8CCC-38B00F124C84}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{B890F5A3-C04F-48B8-8CCC-38B00F124C84}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MindTheMango.Mind.Api.WebApi", "MindTheMango.Mind.Api.WebApi\MindTheMango.Mind.Api.WebApi.csproj", "{D8B0FF4D-663A-41B7-973C-6431E785B8E6}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MindTheMango.Mind.Common", "MindTheMango.Mind.Common", "{8CCB7202-5AAE-418A-99C8-5CF2F302FCC7}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{8CCB7202-5AAE-418A-99C8-5CF2F302FCC7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MindTheMango.Mind.Common.Identity", "MindTheMango.Mind.Common.Identity\MindTheMango.Mind.Common.Identity.csproj", "{3A97E285-2869-4158-B9B0-15B681517DA2}"
 EndProject
@@ -12,19 +12,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MindTheMango.Mind.Common.Io
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MindTheMango.Mind.Common", "MindTheMango.Mind.Common\MindTheMango.Mind.Common.csproj", "{A61419FD-DCF9-42FC-9828-A85426ED25B3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MindTheMango.Mind.Application", "MindTheMango.Mind.Application", "{47D6400C-9A0E-400D-9DAC-FD61DA9F8CB8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{47D6400C-9A0E-400D-9DAC-FD61DA9F8CB8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MindTheMango.Mind.Application.Contract", "MindTheMango.Mind.Application.Contract\MindTheMango.Mind.Application.Contract.csproj", "{D2FDC640-78E1-4F3D-A91A-CB223064DA4A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MindTheMango.Mind.Application.Implementation", "MindTheMango.Mind.Application.Implementation\MindTheMango.Mind.Application.Implementation.csproj", "{BC09AD46-7D18-4DDB-9747-964BCE04FC91}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MindTheMango.Mind.Domain", "MindTheMango.Mind.Domain", "{8E121933-8CDC-4411-943F-324F241770A2}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{8E121933-8CDC-4411-943F-324F241770A2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MindTheMango.Mind.Domain.Entity", "MindTheMango.Mind.Domain.Entity\MindTheMango.Mind.Domain.Entity.csproj", "{3A8B4005-8D8C-441C-9407-694593633ACE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MindTheMango.Mind.Domain", "MindTheMango.Mind.Domain\MindTheMango.Mind.Domain.csproj", "{3135C645-475B-46B8-8E5F-1B4B299501C9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MindTheMango.Mind.Persistence", "MindTheMango.Mind.Persistence", "{BAB3EF98-66E2-4541-8E9F-03978D8CB8F2}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistence", "Persistence", "{BAB3EF98-66E2-4541-8E9F-03978D8CB8F2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MindTheMango.Mind.Persistence.Contract", "MindTheMango.Mind.Persistence.Contract\MindTheMango.Mind.Persistence.Contract.csproj", "{6530EF8F-0CC0-4D40-8C6F-223647BFE577}"
 EndProject
