@@ -9,7 +9,6 @@ namespace MindTheMango.Mind.Application.Contract.Service
     public interface IUserService
     {
         Task<Result<UserDto>> Find(Guid id);
-
         Task<Result<Guid>> Create(string name, string surname, string username, string email, string password, CancellationToken cancellationToken = default);
     }
 }

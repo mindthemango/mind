@@ -6,8 +6,8 @@ using MediatR;
 using Microsoft.Extensions.Logging;
 using MindTheMango.Mind.Application.Contract.Dto;
 using MindTheMango.Mind.Application.Contract.Service;
-using MindTheMango.Mind.Common.Identity.Logic.CreateAccount;
-using MindTheMango.Mind.Common.Identity.Logic.DeleteAccount;
+using MindTheMango.Mind.Common.Identity.Business.CreateAccount;
+using MindTheMango.Mind.Common.Identity.Business.DeleteAccount;
 using MindTheMango.Mind.Common.Result;
 using MindTheMango.Mind.Domain.Business.Users.CreateUser;
 
@@ -43,31 +43,18 @@ namespace MindTheMango.Mind.Application.Implementation.Service
         {
             try
             {
-                var accountResult = await MediatR.Send(new CreateAccountCommand
-                {
-                    Email = email,
-                    Username = username,
-                    Password = password
-                }, cancellationToken);
+                var accountResult = await MediatR.Send(new CreateAccountCommand(email, username, password), cancellationToken);
                 
                 if (!accountResult.Succeeded)
                 {
                     return accountResult;
                 }
                 
-                var userResult = await MediatR.Send(new CreateUserCommand
-                {
-                    Id = accountResult.Value,
-                    Name = name,
-                    Surname = surname
-                }, cancellationToken);
+                var userResult = await MediatR.Send(new CreateUserCommand(accountResult.Value, name, surname), cancellationToken);
 
                 if (!userResult.Succeeded)
                 {
-                    await MediatR.Send(new DeleteAccountCommand
-                    {
-                        Id = accountResult.Value
-                    }, cancellationToken);
+                    await MediatR.Send(new DeleteAccountCommand(accountResult.Value), cancellationToken);
                 }
                 
                 return userResult;
@@ -76,7 +63,7 @@ namespace MindTheMango.Mind.Application.Implementation.Service
             {
                 var code = Guid.NewGuid().ToString();
                  
-                Logger.LogError(e, "Unhandled error creating user ({code})", code);
+                Logger.LogError(e, "Unhandled error creating user ({TraceCode})", code);
                 
                 return Result<Guid>.UnknownError(new List<string> {$"Unknown error while creating a new user. Trace code: {code}"});
             }
