@@ -29,8 +29,12 @@ namespace MindTheMango.Mind.Domain.Business.Notes.CreateNote
                 Timestamp = request.Timestamp
             };
 
-            await _unitOfWork.NoteRepository.Insert(note);
-
+            var user = await _unitOfWork.UserRepository.FindBy(u => u.Id == request.UserId, u => u.Notes);
+            
+            user.Notes.Add(note);
+            
+            _unitOfWork.UserRepository.Update(user);
+            
             await _unitOfWork.SaveAsync(cancellationToken);
 
             Logger.LogTrace("Created new note {@Note}", note);

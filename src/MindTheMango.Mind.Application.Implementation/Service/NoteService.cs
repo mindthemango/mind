@@ -32,11 +32,11 @@ namespace MindTheMango.Mind.Application.Implementation.Service
             throw new NotImplementedException();
         }
 
-        public async Task<Result<Guid>> Create(Guid userId, string title, string content)
+        public async Task<Result<Guid>> Create(Guid userId, string title, string content, CancellationToken cancellationToken)
         {
             try
             {
-                var noteResult = await MediatR.Send(new CreateNoteCommand(userId, title, content));
+                var noteResult = await MediatR.Send(new CreateNoteCommand(userId, title, content), cancellationToken);
 
                 return noteResult;
             }
@@ -50,7 +50,7 @@ namespace MindTheMango.Mind.Application.Implementation.Service
             }
         }
 
-        public Task<Result> Delete(Guid userId, Guid noteId)
+        public Task<Result> Delete(Guid userId, Guid noteId, CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
         }

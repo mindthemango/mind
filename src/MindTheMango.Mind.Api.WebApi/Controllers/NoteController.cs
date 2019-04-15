@@ -1,8 +1,12 @@
 using System;
+using System.IdentityModel.Tokens.Jwt;
 using System.Net;
+using System.Security.Claims;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using MindTheMango.Mind.Api.WebApi.Model.Note;
 using MindTheMango.Mind.Api.WebApi.Model.User;
 using MindTheMango.Mind.Application.Contract.Service;
 using MindTheMango.Mind.Common.Result;
@@ -10,35 +14,38 @@ using MindTheMango.Mind.Common.Result;
 namespace MindTheMango.Mind.Api.WebApi.Controllers
 {
     /// <summary>
-    /// Controller for user related endpoints.
+    /// Controller for note related endpoints.
     /// </summary>
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
-    public class UserController : ControllerBase
+    public class NoteController : ControllerBase
     {
-        private readonly IUserService _userService;
+        private readonly INoteService _noteService;
 
         /// <summary>
-        /// Public constructor of UserController.
+        /// Public constructor of NoteController.
         /// </summary>
-        /// <param name="userService"></param>
-        public UserController(IUserService userService)
+        /// <param name="noteService"></param>
+        public NoteController(INoteService noteService)
         {
-            _userService = userService;
+            _noteService = noteService;
         }
-
+        
         /// <summary>
-        /// Endpoint for creating a new user.
+        /// Endpoint for creating a new note.
         /// </summary>
         /// <param name="model"></param>
         /// <param name="cancellationToken"></param>
-        /// <response code="200">Returns the GUID of the created user.</response>
+        /// <response code="200">Returns the GUID of the created note.</response>
         [HttpPost]
         [Produces("application/json")]
         [ProducesResponseType(typeof(Guid), (int)HttpStatusCode.OK)]
-        public async Task<IActionResult> CreateUser([FromBody] CreateUserModel model, CancellationToken cancellationToken)
+        public async Task<IActionResult> CreateNote([FromBody] CreateNoteModel model, CancellationToken cancellationToken)
         {
-            var result = await _userService.Create(model.Name, model.Surname, model.Username, model.Email, model.Password, cancellationToken);
+            var userId = new Guid(HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));
+            
+            var result = await _noteService.Create(userId, model.Title, model.Content, cancellationToken);
 
             return result.Succeeded 
                 ? Ok(result.Value)
@@ -79,6 +86,5 @@ namespace MindTheMango.Mind.Api.WebApi.Controllers
                 Message = "Please try again later. If the error persists, contact the administrators."
             });
         }
-        
     }
 }
