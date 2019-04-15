@@ -33,8 +33,12 @@ namespace MindTheMango.Mind.Persistence.Implementation
             try
             {
                 await Context.SaveChangesAsync(cancellationToken);
-                
+
                 Logger.LogInformation("Database save operation finished correctly.");
+            }
+            catch (OperationCanceledException e)
+            {
+                Logger.LogInformation("Database save operation was cancelled by cancellation token.");
             }
             catch (DbUpdateConcurrencyException e)
             {
