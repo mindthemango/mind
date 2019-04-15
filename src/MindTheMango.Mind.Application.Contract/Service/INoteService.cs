@@ -11,7 +11,7 @@ namespace MindTheMango.Mind.Application.Contract.Service
     {
         Task<Result<NoteDto>> Find(Guid userId, Guid noteId, CancellationToken cancellationToken);
         Task<Result<IList<NoteDto>>> FindAll(Guid userId, CancellationToken cancellationToken);
-        Task<Result<Guid>> Create(Guid userId, string title, string content);
-        Task<Result> Delete(Guid userId, Guid noteId);
+        Task<Result<Guid>> Create(Guid userId, string title, string content, CancellationToken cancellationToken);
+        Task<Result> Delete(Guid userId, Guid noteId, CancellationToken cancellationToken);
     }
 }
